@@ -1,0 +1,32 @@
+{
+  "name": "AI for CLM student workshop",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "remoteUser": "vscode",
+  "updateContentCommand": "python3 .course/course.py dependencies",
+  "postCreateCommand": "python3 .course/course.py setup",
+  "postStartCommand": "python3 .course/course.py start",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "anthropic.claude-code@2.1.289",
+        "mathematic.vscode-pdf@0.2.6"
+      ],
+      "settings": {
+        "extensions.autoUpdate": false,
+        "extensions.autoCheckUpdates": false,
+        "chat.disableAIFeatures": true,
+        "chat.commandCenter.enabled": false,
+        "chat.agent.enabled": false,
+        "github.copilot.enable": {
+          "*": false
+        },
+        "workbench.secondarySideBar.defaultVisibility": "visible",
+        "claudeCode.preferredLocation": "sidebar"
+      }
+    }
+  },
+  "shutdownAction": "stopContainer"
+}

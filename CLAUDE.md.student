@@ -1,0 +1,28 @@
+# Agent instructions
+
+This is an educational task for business leaders. Keep responses short and direct, and emphasise the business decision (eligibility, cost, risk, approvals) rather than technical or implementation detail.
+
+Some PDFs in `case/` have a hidden Markdown companion, `X.pdf.md`, beside `X.pdf`. Participants see only the PDF.
+
+- Whenever `X.pdf.md` exists, read it instead of `X.pdf`. It carries the same document text, plus every spreadsheet cell by sheet, row and column letter with stored results and formulas, and avoids PDF table-extraction errors.
+- When citing, use the document's table and row locators (for example `PRG-02 T1 T-01`) or workbook cell references (for example `Mandatory Gate!J2`).
+
+## Procurement exercises
+
+The first run is a sequence of bounded tasks: explain the case, offer optional audience/structure/terminology follow-ups, help identify requirement-setting documents, develop a prompt, and run a separate agent with that prompt to save a procurement brief in `BRIEF.md`. No extraction skill is required. Preserve document inventory, mandatory gates, scored criteria and weights, budget, delivery and support constraints, source locations and unresolved questions in the brief.
+
+For the brief-writing agent, pass only the selected requirement-setting documents. Exclude submitted bids and earlier evaluation results from its inputs and reading. Do not use the example recommendation or supplier claims to define requirements. Use available access controls when possible; do not claim that separate context or prompt instructions enforce file isolation. Preserve missing or conflicting evidence rather than silently settling it.
+
+Next, help create the requested three-slide presentation from the brief and its cited sources. Adding a criteria-weight pie chart is optional; mandatory pass/fail gates are not weighted slices. Keep bid evaluation outside these starter tasks. If the participant requests the optional `/slides` investigation, read the original evidence needed to check the five errors in "A convincing recommendation"; bid and evaluation records may be read for that investigation after the brief is saved. Do not overwrite the requirement brief with bidder claims. Before compaction or a new chat, save first-run findings and unresolved questions in `BRIEF.md` when requested.
+
+After governance, use `/imda-ai` to relate the participant's brief and outputs to the framework. Begin policy design with Verify: one verifier per bidder, using the criteria and that bidder's submission. Help participants define accountable owners, allowed data and tools, permitted/prohibited actions, approvals, stop conditions and evidence logs in `AGENT-DESIGN.md`. Distinguish proposed controls from demonstrated enforcement. A Verify risk-assessment presentation is a bounded task, not permission to run the pipeline. Extend the assessment to Ingest, Draft and Review as the participant develops a complete design; do not silently complete the other stages on their behalf.
+
+The teaching run described in `AGENT-DESIGN.md` covers Verify, Draft and Review only. Use the existing `BRIEF.md` as the requirements and criteria; do not rerun Ingest or revise the criteria based on bids. If the brief is missing, pause and ask the participant to generate it using the earlier brief-writing exercise before proceeding. Before running this pipeline, explain that it may take 15 minutes and obtain explicit confirmation that this duration is acceptable. A request for a summary, chart or presentation does not authorise the pipeline. Directly requested starter tasks can proceed within their own scope.
+
+For any PowerPoint deck, use Anthropic's `pptx` skill (`document-skills:pptx`) and build from `templates/astar-template.pptx` with the skill's template-editing workflow. Read `templates/README.md` first: it maps the template's slides and layouts, so you do not need to inspect them yourself. Never modify the template itself.
+
+- Every slide must show the "Simulation: ocelliq.com/astar-lr" notice, white text on an oxblood tab in the top-right corner. The template's layouts already carry it, so keep every slide on a template layout and never cover the notice. If a slide cannot use a template layout, add the notice yourself: Open Sans 11pt white (`FFFFFF`) text, centred on a 2.45" × 0.27" oxblood (`6D1A1F`) rectangle flush with the top-right corner of the slide.
+- Every time you create or change a deck, also export a PDF beside it with the skill's `scripts/office/soffice.py --headless --convert-to pdf`, and give the participant both paths. Participants view the PDF live in the editor; the PowerPoint file cannot be previewed there.
+
+Use the `slides` skill in `.claude/skills/slides/` when participants ask about a presentation slide or want a course concept explained. Its resources contain slide images, searchable text, and source excerpts; slide numbers match the presentation footer.
+

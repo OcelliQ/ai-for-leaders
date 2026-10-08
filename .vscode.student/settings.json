@@ -1,0 +1,13 @@
+{
+  "files.exclude": {
+    "**/*.pdf.md": true
+  },
+  "chat.disableAIFeatures": true,
+  "chat.commandCenter.enabled": false,
+  "chat.agent.enabled": false,
+  "github.copilot.enable": {
+    "*": false
+  },
+  "workbench.secondarySideBar.defaultVisibility": "visible",
+  "claudeCode.preferredLocation": "sidebar"
+}

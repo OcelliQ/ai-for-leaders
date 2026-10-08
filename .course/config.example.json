@@ -1,0 +1,8 @@
+{
+  "inference_base_url": "https://your-provider.example",
+  "api_key": "",
+  "models": {
+    "main": "your-provider-main-model",
+    "small": "your-provider-auxiliary-model"
+  }
+}

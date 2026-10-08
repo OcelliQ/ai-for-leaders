@@ -1,0 +1,13 @@
+# Temporary files and directories
+.tmp*
+
+# Participant credentials and private runtime state
+.course/config.json
+.course/config.local.json
+.env
+.env.*
+**/.credentials.json
+.course-state/
+.feedback/
+__pycache__/
+*.pyc
