@@ -1,6 +1,6 @@
 {
   "deck": "01-intro",
-  "pdf_sha256": "ddfbc8c169f7f9605f63cd0dcdd3d97dbba63263f21227c098809d64a8a82211",
+  "pdf_sha256": "f30d35ff29a30ba464796058a658eada0cbb75c7c0e7e9a5c5ea760e5b6df722",
   "renderer": {
     "version": "pdftoppm version 24.02.0",
     "scale_to": 1600
